@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Numerical Reasoning Test"
+        android:text="Quick Maths!"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

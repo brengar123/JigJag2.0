@@ -42,6 +42,8 @@ public class Games {
         ArrayList<Games> games = new ArrayList<>();
         games.add(new Games("Quick Maths!","Numerical Reasoning", "Find out what number each shape represents", R.drawable.gameone));
         games.add(new Games("Unscrambler", "Logical Reasoning", "Unscramble the given word", 1));
+        games.add(new Games("Risk Assessment", "Risk Assessment", "How many times will you blow the balloon up till it pops?", 1));
+        games.add(new Games("Reaction Timer", "Reaction", "Quickly press on the screen to see how fast your reaction is", 1));
         games.add(new Games("To be continued", "N/A", "Stay tuned for more games coming soon :)", 1));
         return games;
     }

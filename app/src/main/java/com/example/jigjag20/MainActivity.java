@@ -45,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GameTwoFragment.class);
         startActivity(intent);
     }
+    private void launchgamethree() {
+        Intent intent = new Intent(this, GameThreeFragment.class);
+        startActivity(intent);
+    }
+    private void launchgamefour() {
+        Intent intent = new Intent(this, GameFourFragment.class);
+        startActivity(intent);
+    }
     private void launcheasteregg(){
         Intent intent = new Intent(this, EasterEgg.class);
         startActivity(intent);
@@ -54,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         switch (position){
             case 0: launchgameone(); break;
             case 1: launchgametwo(); break;
-            case 2: launcheasteregg(); break;
+            case 2: launchgamethree(); break;
+            case 3: launchgamefour(); break;
+            case 4: launcheasteregg(); break;
         }
     }
 }
