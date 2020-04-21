@@ -9,47 +9,65 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_height="114dp"
-    android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_height="88dp"
-        android:layout_width="93dp"
-        tools:srcCompat="@tools:sample/avatars"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:id="@+id/ListPhoto"/>
+        <ImageView
+            android:id="@+id/ListPhoto"
+            android:layout_width="93dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/gameone" />
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/ListPhoto"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:id="@+id/ListName"
-        app:layout_constraintStart_toEndOf="@+id/ListPhoto"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="TextView"/>
+        <TextView
+            android:id="@+id/ListName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ListPhoto"
+            app:layout_constraintTop_toTopOf="@+id/ListPhoto" />
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/ListName"
-        android:id="@+id/ListType" android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/ListName"
-        android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/ListType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ListPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/ListName" />
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/ListType"
-        android:id="@+id/ListDescription" android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/ListType"
-        android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/ListDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ListPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/ListType" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

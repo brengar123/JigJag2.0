@@ -1,8 +1,10 @@
 package com.example.jigjag20;
 
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +27,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
         public TextView name;
         public TextView type;
         public TextView description;
+        public ImageView image;
         private RecyclerViewClickListener mListener;
 
         public GamesViewHolder(View v, RecyclerViewClickListener listener){
@@ -34,6 +37,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
             name = v.findViewById(R.id.ListName);
             type = v.findViewById(R.id.ListType);
             description = v.findViewById(R.id.ListDescription);
+            image = v.findViewById(R.id.ListPhoto);
         }
 
         @Override
@@ -52,6 +56,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
         holder.name.setText(games.getName());
         holder.type.setText(games.getType());
         holder.description.setText(games.getDescription());
+        holder.image.setImageResource(games.getImage());
     }
     @Override
     public int getItemCount() {
