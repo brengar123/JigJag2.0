@@ -38,11 +38,11 @@ public class GameFiveFragment extends AppCompatActivity {
         String solution = String.valueOf(random.get(0)) + String.valueOf(random.get(1)) + String.valueOf(random.get(2)) + String.valueOf(random.get(3)) + String.valueOf(random.get(4)) + String.valueOf(random.get(5)) + String.valueOf(random.get(6)) + String.valueOf(random.get(7)) + String.valueOf(random.get(8)) + String.valueOf(random.get(9)) + String.valueOf(random.get(10));
         mRandomN.setText((String.valueOf(random.get(0))));
         info.setText("This is number 1 in the sequence");
+        mHandler = new Handler();
         //Set OnClickListener to refresh number
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mHandler = new Handler();
                 startRepeatingTask();
             }
         });
@@ -52,8 +52,6 @@ public class GameFiveFragment extends AppCompatActivity {
                 String userinput = mSequence.getText().toString();
                 if(userinput.equals(solution)){
                     message.setText("Correct!");
-                    random = generateNumber();
-                    mRandomN.setText(String.valueOf(random));
                 }
                 else{
                     message.setText("Incorrect! The sequence was " + solution);

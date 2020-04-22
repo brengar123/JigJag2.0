@@ -48,11 +48,11 @@ public class Games {
     }
     public static ArrayList<Games> getGames(){
         ArrayList<Games> games = new ArrayList<>();
-        games.add(new Games("Quick Maths!","Numerical Reasoning", "Find out what number each shape represents", R.drawable.gameone));
-        games.add(new Games("Unscrambler", "Logical Reasoning", "Unscramble the given word", R.drawable.gameone));
-        games.add(new Games("Balloon", "Risk Assessment", "Blow up the balloon as big as you can without popping it", R.drawable.gameone));
-        games.add(new Games("Colour Change", "Reflex", "Click the button when the colour changes", R.drawable.gameone));
-        games.add(new Games("Memorisation", "Memory", "Memorise the sequence of numbers", R.drawable.gameone));
+        games.add(new Games("Quick Maths!","Numerical Reasoning", "Find out what number each shape represents", R.drawable.maths));
+        games.add(new Games("Unscrambler", "Logical Reasoning", "Unscramble the given word", R.drawable.dictionary));
+        games.add(new Games("Balloon", "Risk Assessment", "Blow up the balloon as big as you can without popping it", R.drawable.onebal));
+        games.add(new Games("Colour Change", "Reflex", "Click the button when the colour changes", R.drawable.timer));
+        games.add(new Games("Memorisation", "Memory", "Memorise the sequence of numbers", R.drawable.numbers));
         games.add(new Games("To be continued", "N/A", "Stay tuned for more games coming soon?", R.drawable.gameone));
         return games;
     }
