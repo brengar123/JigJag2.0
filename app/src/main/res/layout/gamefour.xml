@@ -19,25 +19,35 @@
     <Button
         android:id="@+id/b_main"
         android:layout_width="match_parent"
-        android:layout_height="662dp"
+        android:layout_height="508dp"
         android:layout_above="@+id/b_start"
+        android:layout_below="@+id/tv_info"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
         android:layout_marginBottom="48dp"
         android:background="@color/red"
         android:text=""
         android:textColor="#ffffff"
-        android:textSize="64dp"
-        android:layout_below="@+id/tv_info"/>
+        android:textSize="64dp" />
 
 
     <TextView
         android:id="@+id/tv_info"
-        android:gravity="center"
-        android:textSize="24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="" />
+        android:layout_marginTop="67dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Flash React!"
+        android:textSize="56dp" />
 
 </RelativeLayout>
