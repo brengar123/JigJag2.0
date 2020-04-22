@@ -53,6 +53,10 @@ public class DetailActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GameFourFragment.class);
         startActivity(intent);
     }
+    private void launchgamefive(){
+        Intent intent = new Intent(this, GameFiveFragment.class);
+        startActivity(intent);
+    }
     private void launcheasteregg(){
         Intent intent = new Intent(this, EasterEgg.class);
         startActivity(intent);
@@ -64,7 +68,8 @@ public class DetailActivity extends AppCompatActivity {
             case 1: launchgametwo(); break;
             case 2: launchgamethree(); break;
             case 3: launchgamefour(); break;
-            case 4: launcheasteregg(); break;
+            case 4: launchgamefive(); break;
+            case 5: launcheasteregg(); break;
         }
     }
 }

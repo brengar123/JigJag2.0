@@ -17,6 +17,7 @@
         <activity android:name=".GameTwoFragment" />
         <activity android:name=".GameThreeFragment" />
         <activity android:name=".GameFourFragment" />
+        <activity android:name=".GameFiveFragment" />
         <activity android:name=".EasterEgg" />
         <activity android:name=".MainActivity">
             <intent-filter>
