@@ -1,5 +1,7 @@
 package com.example.jigjag20;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +58,11 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
         holder.name.setText(games.getName());
         holder.type.setText(games.getType());
         holder.description.setText(games.getDescription());
-        holder.image.setImageResource(games.getImage());
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inScaled = false;
+        Bitmap source = BitmapFactory.decodeResource(holder.image.getResources(), games.getImage(), options);
+        holder.image.setImageBitmap(source);
     }
     @Override
     public int getItemCount() {

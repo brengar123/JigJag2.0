@@ -10,7 +10,7 @@
         android:id="@+id/textView9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Will The Balloon Pop?"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
@@ -50,8 +50,8 @@
 
     <ImageView
         android:id="@+id/balloon"
-        android:layout_width="291dp"
-        android:layout_height="299dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
