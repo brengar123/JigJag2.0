@@ -36,7 +36,6 @@ public class Anagram {
             "edge",
             "staircase",
             "cutting",
-            "rugby",
             "imagine",
             "share",
             "literacy",

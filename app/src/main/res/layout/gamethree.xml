@@ -50,12 +50,13 @@
 
     <ImageView
         android:id="@+id/G3iv_Balloon"
-        android:layout_width="165dp"
-        android:layout_height="166dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/G3tv_Title"
+        app:layout_constraintVertical_bias="0.495"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

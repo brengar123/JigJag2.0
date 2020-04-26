@@ -66,7 +66,7 @@ public class GameThreeFragment extends AppCompatActivity {
                 mMessage.setText("You stopped blowing the balloon");
             }
             //lets the user stop blowing the balloon
-            //ideal future implementation: this result is stored in database and comparison with other players is displayed to user to guage level of risk
+            //ideal future implementation: this result is stored in database and comparison with other players is displayed to user to gauge level of risk
         });
 
 

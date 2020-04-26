@@ -43,7 +43,7 @@ public class GameOneFragment extends AppCompatActivity {
     int answerone = numberone * numbertwo - numberthree;
     int answertwo = numberthree + numbertwo;
 
-    //equations that are used, number one represents the coefficient, number two represents the orange and numberthree represents apple
+    //equations that are used, number one represents the coefficient, number two represents the orange and number three represents apple
 
 
     @Override
@@ -81,7 +81,7 @@ public class GameOneFragment extends AppCompatActivity {
         TextView message = findViewById(R.id.G1tv_Message);
         //sets all elements based on random numbers above and places pictures of fruit as the imageviews
         Button enter = findViewById(R.id.G1bt_Enter);
-        //button is used to check if userinputs are the same as answer
+        //button is used to check if user inputs are the same as answer
 
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
