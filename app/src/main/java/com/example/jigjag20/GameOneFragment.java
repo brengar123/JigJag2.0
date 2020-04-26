@@ -1,5 +1,7 @@
 package com.example.jigjag20;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +15,7 @@ public class GameOneFragment extends AppCompatActivity {
     private TextView one;
     private TextView two;
     private TextView three;
+    private TextView Title;
     private ImageView appleone;
     private ImageView appletwo;
     private ImageView orangeone;
@@ -25,17 +28,15 @@ public class GameOneFragment extends AppCompatActivity {
     private TextView message;
 
 
-
-
-    public static int RandomiseNumber(int min, int max){
-        int number = (int)(Math.random()*((max-min) + 1)) + min;
+    public static int RandomiseNumber(int min, int max) {
+        int number = (int) (Math.random() * ((max - min) + 1)) + min;
         return number;
     }
     //method to generate a random number within the min and max inputs
 
-    int numberone = RandomiseNumber(2,12);
-    int numbertwo = RandomiseNumber(0,12);
-    int numberthree = RandomiseNumber(0,12);
+    int numberone = RandomiseNumber(2, 12);
+    int numbertwo = RandomiseNumber(0, 12);
+    int numberthree = RandomiseNumber(0, 12);
 
     //generates randomnumbers
 
@@ -46,12 +47,20 @@ public class GameOneFragment extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gameone);
         TextView one = findViewById(R.id.G1tv_Coefficient);
         TextView two = findViewById(R.id.G1tv_Answerone);
         TextView three = findViewById(R.id.G1tv_Answertwo);
+        TextView Title = findViewById(R.id.G1tv_Title);
+        Title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showVideo("https://www.youtube.com/watch?v=X09oxyIeGuY");
+            }
+        });
+        //funny easter egg that references the title of the game to a modern maths meme, likely to be appreciated by our target audience
         one.setText(String.valueOf(numberone));
         two.setText(String.valueOf(answerone));
         three.setText(String.valueOf(answertwo));
@@ -81,11 +90,11 @@ public class GameOneFragment extends AppCompatActivity {
                 int useranswertwo = Integer.valueOf(inputtwo.getText().toString());
                 //casts user input from string to int so it can be checked against answer
 
-                if (useranswerone == numberthree && useranswertwo == numbertwo){
+                if (useranswerone == numberthree && useranswertwo == numbertwo) {
                     message.setText("Correct!");
-                    numberone = RandomiseNumber(2,12);
-                    numbertwo = RandomiseNumber(0,12);
-                    numberthree = RandomiseNumber(0,12);
+                    numberone = RandomiseNumber(2, 12);
+                    numbertwo = RandomiseNumber(0, 12);
+                    numberthree = RandomiseNumber(0, 12);
                     answerone = numberone * numbertwo - numberthree;
                     answertwo = numberthree + numbertwo;
                     one.setText(String.valueOf(numberone));
@@ -95,8 +104,7 @@ public class GameOneFragment extends AppCompatActivity {
                     inputtwo.setText("");
                     //tell users it's correct, generates new random numbers, allows user to answer again
 
-                }
-                else {
+                } else {
                     message.setText("Incorrect! Please try again!");
                     //informs the user that inputs do not match answer
                 }
@@ -106,4 +114,9 @@ public class GameOneFragment extends AppCompatActivity {
 
     }
 
+    private void showVideo(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
+        //method to launch new intent that is a URL
+    }
 }

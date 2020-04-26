@@ -53,8 +53,8 @@ public class Games {
         games.add(new Games("Unscrambler", "Logical Reasoning", "Unscramble the given word", R.drawable.dictionary));
         games.add(new Games("Will The Balloon Pop?", "Risk Assessment", "Blow up the balloon as big as you can without popping it", R.drawable.onebal));
         games.add(new Games("Flash React!", "Reflex and Reaction", "Test how fast you can react when the colour changes", R.drawable.timer));
-        games.add(new Games("Can You Remember?", "Memory Recognition", "Memorise the sequence of numbers", R.drawable.numbers));
-        games.add(new Games("To be continued", "N/A", "Stay tuned for more games coming soon?", R.drawable.gameone));
+        games.add(new Games("Do you Remember?", "Memory Recognition", "Memorise the sequence of numbers", R.drawable.numbers));
+        games.add(new Games("To Be Continued", "N/A", "Stay tuned for more games coming soon?", R.drawable.gameone));
         return games;
         //fills array with information about the games
     }

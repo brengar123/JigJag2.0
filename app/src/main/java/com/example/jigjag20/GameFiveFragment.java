@@ -2,6 +2,8 @@ package com.example.jigjag20;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -21,6 +23,7 @@ public class GameFiveFragment extends AppCompatActivity {
     public ArrayList<Integer> random = new ArrayList<>();
     public TextView mMessage;
     public TextView mInfo;
+    private TextView mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,14 @@ public class GameFiveFragment extends AppCompatActivity {
         mEnter = findViewById(R.id.G5bt_Enter);
         mMessage = findViewById(R.id.G5tv_Message);
         mInfo = findViewById(R.id.G5tv_Counter);
+        mTitle = findViewById(R.id.G5tv_Title);
+        //funny easter egg that references the title of the game to a classic song, likely to be appreciated by our target audience
+        mTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showVideo("http://www.youtube.com/watch?v=Gs069dndIYk&t=0m18s");
+            }
+        });
         random = generateNumber();
         //creates one array that has been filled with random numbers
         String solution = String.valueOf(random.get(0)) + String.valueOf(random.get(1)) + String.valueOf(random.get(2)) + String.valueOf(random.get(3)) + String.valueOf(random.get(4)) + String.valueOf(random.get(5)) + String.valueOf(random.get(6)) + String.valueOf(random.get(7)) + String.valueOf(random.get(8)) + String.valueOf(random.get(9)) + String.valueOf(random.get(10));
@@ -119,5 +130,10 @@ public class GameFiveFragment extends AppCompatActivity {
         }
         return generateNumber;
 
+    }
+    private void showVideo(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
+        //method to launch new intent that is a URL
     }
 }
