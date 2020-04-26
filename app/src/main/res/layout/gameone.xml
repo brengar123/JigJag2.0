@@ -211,7 +211,7 @@
     <EditText
         android:id="@+id/G1et_Inputapple"
         android:layout_width="115dp"
-        android:layout_height="60dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:ems="10"
@@ -224,7 +224,7 @@
     <EditText
         android:id="@+id/G1et_Inputorange"
         android:layout_width="115dp"
-        android:layout_height="60dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:ems="10"
