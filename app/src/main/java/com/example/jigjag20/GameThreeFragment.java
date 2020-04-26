@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class GameThreeFragment extends AppCompatActivity {
     private TextView mMessage;
@@ -47,9 +49,15 @@ public class GameThreeFragment extends AppCompatActivity {
                 else {
                     mMessage.setText("You have blown up the balloon " + i + " times");
                     //lets the user know how many times they have blown the balloon
+                    mBalloon.setImageResource(R.drawable.onebal);
+
+                    ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(350 + (100 * i), 350 + (100 * i));
+                    mBalloon.setLayoutParams(params);
                     //balloon image increases everytime to let user know it is about to pop
+                    //balloon continually floats upwards to add realism
                 }
             }
+
         });
 
         mStopper.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +66,7 @@ public class GameThreeFragment extends AppCompatActivity {
                 mMessage.setText("You stopped blowing the balloon");
             }
             //lets the user stop blowing the balloon
-            //ideal future implementation: this result is stored in database and ccomparison with other players is displayed to user to guage level of risk
+            //ideal future implementation: this result is stored in database and comparison with other players is displayed to user to guage level of risk
         });
 
 
