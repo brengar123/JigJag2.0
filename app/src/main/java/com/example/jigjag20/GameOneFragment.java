@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Random;
-
 public class GameOneFragment extends AppCompatActivity {
     private TextView one;
     private TextView two;
@@ -33,45 +31,55 @@ public class GameOneFragment extends AppCompatActivity {
         int number = (int)(Math.random()*((max-min) + 1)) + min;
         return number;
     }
+    //method to generate a random number within the min and max inputs
+
     int numberone = RandomiseNumber(2,12);
     int numbertwo = RandomiseNumber(0,12);
     int numberthree = RandomiseNumber(0,12);
 
+    //generates randomnumbers
+
     int answerone = numberone * numbertwo - numberthree;
     int answertwo = numberthree + numbertwo;
+
+    //equations that are used, number one represents the coefficient, number two represents the orange and numberthree represents apple
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gameone);
-        TextView one = findViewById(R.id.NumberOne);
-        TextView two = findViewById(R.id.AnswerOne);
-        TextView three = findViewById(R.id.AnswerTwo);
+        TextView one = findViewById(R.id.G1tv_Coefficient);
+        TextView two = findViewById(R.id.G1tv_Answerone);
+        TextView three = findViewById(R.id.G1tv_Answertwo);
         one.setText(String.valueOf(numberone));
         two.setText(String.valueOf(answerone));
         three.setText(String.valueOf(answertwo));
-        ImageView appleone = findViewById(R.id.imageView);
+        ImageView appleone = findViewById(R.id.G1iv_Orangeone);
         appleone.setImageResource(R.drawable.apple);
-        ImageView appletwo = findViewById(R.id.imageView3);
+        ImageView appletwo = findViewById(R.id.G1iv_Orangetwo);
         appletwo.setImageResource(R.drawable.apple);
-        ImageView orangeone = findViewById(R.id.imageView2);
+        ImageView orangeone = findViewById(R.id.G1iv_Appleone);
         orangeone.setImageResource(R.drawable.orange);
-        ImageView orangetwo = findViewById(R.id.imageView4);
+        ImageView orangetwo = findViewById(R.id.G1iv_Appletwo);
         orangetwo.setImageResource(R.drawable.orange);
-        ImageView finalorange = findViewById(R.id.imageView7);
+        ImageView finalorange = findViewById(R.id.G1iv_FinalOrange);
         finalorange.setImageResource(R.drawable.orange);
-        ImageView finalapple = findViewById(R.id.imageView6);
+        ImageView finalapple = findViewById(R.id.G1iv_FinalApple);
         finalapple.setImageResource(R.drawable.apple);
-        EditText inputone = findViewById(R.id.InputOne);
-        EditText inputtwo = findViewById(R.id.InputTwo);
-        TextView message = findViewById(R.id.Message);
-        Button enter = findViewById(R.id.EnterAnswer);
+        EditText inputone = findViewById(R.id.G1et_Inputapple);
+        EditText inputtwo = findViewById(R.id.G1et_Inputorange);
+        TextView message = findViewById(R.id.G1tv_Message);
+        //sets all elements based on random numbers above and places pictures of fruit as the imageviews
+        Button enter = findViewById(R.id.G1bt_Enter);
+        //button is used to check if userinputs are the same as answer
+
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int useranswerone = Integer.valueOf(inputone.getText().toString());
                 int useranswertwo = Integer.valueOf(inputtwo.getText().toString());
+                //casts user input from string to int so it can be checked against answer
 
                 if (useranswerone == numberthree && useranswertwo == numbertwo){
                     message.setText("Correct!");
@@ -85,10 +93,12 @@ public class GameOneFragment extends AppCompatActivity {
                     three.setText(String.valueOf(answertwo));
                     inputone.setText("");
                     inputtwo.setText("");
+                    //tell users it's correct, generates new random numbers, allows user to answer again
 
                 }
                 else {
                     message.setText("Incorrect! Please try again!");
+                    //informs the user that inputs do not match answer
                 }
             }
         });

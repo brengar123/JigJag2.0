@@ -8,7 +8,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/Title"
+        android:id="@+id/G2tv_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:layout_marginTop="24dp"
-        android:id="@+id/Word"
+        android:id="@+id/G2tv_Word"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
         android:layout_marginRight="16dp"
         android:layout_marginEnd="16dp"
@@ -36,13 +36,13 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/Title"
-        app:layout_constraintEnd_toEndOf="@+id/Title"
+        app:layout_constraintStart_toStartOf="@+id/G2tv_Title"
+        app:layout_constraintEnd_toEndOf="@+id/G2tv_Title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="What word is this?"
         android:layout_marginTop="16dp"
         android:id="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/Title"/>
+        app:layout_constraintTop_toBottomOf="@+id/G2tv_Title"/>
 
     <TextView
         android:layout_height="wrap_content"
@@ -52,12 +52,12 @@
         android:text="Hint: "
         android:layout_marginTop="32dp"
         android:id="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/Word"
+        app:layout_constraintTop_toBottomOf="@+id/G2tv_Word"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"/>
 
     <TextView
-        android:id="@+id/Definition"
+        android:id="@+id/G2tv_Definition"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -79,7 +79,7 @@
         android:text="Your guess is:"
         android:layout_marginTop="32dp"
         android:id="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/Definition"/>
+        app:layout_constraintTop_toBottomOf="@+id/G2tv_Definition"/>
 
     <EditText
         android:layout_height="wrap_content"
@@ -88,31 +88,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:layout_marginTop="16dp"
-        android:id="@+id/InputGuess"
+        android:id="@+id/G2et_Input"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
         android:inputType="textPersonName"
         android:ems="10"/>
 
     <TextView
-        android:id="@+id/Response"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/G2et_Input"
+        app:layout_constraintEnd_toEndOf="@+id/G2et_Input"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/InputGuess"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/InputGuess"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.046" />
+        android:id="@+id/G2tv_Message"
+        app:layout_constraintTop_toBottomOf="@+id/G2bt_Enter"/>
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/InputGuess"
-        app:layout_constraintEnd_toEndOf="@+id/InputGuess"
+        app:layout_constraintStart_toStartOf="@+id/G2et_Input"
+        app:layout_constraintEnd_toEndOf="@+id/G2et_Input"
         android:text="Enter"
         android:layout_marginTop="16dp"
-        android:id="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/InputGuess"/>
+        android:id="@+id/G2bt_Enter"
+        app:layout_constraintTop_toBottomOf="@+id/G2et_Input"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

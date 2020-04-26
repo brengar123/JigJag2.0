@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/G3tv_Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -19,46 +19,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/increase"
+        android:id="@+id/G3bt_Increase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Increase Size"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/balloon" />
+        app:layout_constraintEnd_toEndOf="@+id/G3tv_Title"
+        app:layout_constraintStart_toStartOf="@+id/G3tv_Title"
+        app:layout_constraintTop_toBottomOf="@+id/G3iv_Balloon" />
 
     <TextView
-        android:id="@+id/G3Message"
+        android:id="@+id/G3tv_Message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/increase"
-        app:layout_constraintStart_toStartOf="@+id/increase"
-        app:layout_constraintTop_toBottomOf="@+id/increase" />
+        app:layout_constraintEnd_toEndOf="@+id/G3bt_Increase"
+        app:layout_constraintStart_toStartOf="@+id/G3bt_Increase"
+        app:layout_constraintTop_toBottomOf="@+id/G3bt_Increase" />
 
     <Button
-        android:id="@+id/stopper"
+        android:id="@+id/G3bt_Stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Stop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/increase"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="@+id/increase"
-        app:layout_constraintTop_toBottomOf="@+id/G3Message"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintEnd_toEndOf="@+id/G3bt_Increase"
+        app:layout_constraintStart_toStartOf="@+id/G3bt_Increase"
+        app:layout_constraintTop_toBottomOf="@+id/G3tv_Message" />
 
     <ImageView
-        android:id="@+id/balloon"
+        android:id="@+id/G3iv_Balloon"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/G3tv_Title"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

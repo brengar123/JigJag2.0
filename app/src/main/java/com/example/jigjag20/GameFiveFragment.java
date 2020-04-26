@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,41 +19,47 @@ public class GameFiveFragment extends AppCompatActivity {
     public Handler mHandler;
     public Button mEnter;
     public ArrayList<Integer> random = new ArrayList<>();
-    public TextView message;
-    public TextView info;
+    public TextView mMessage;
+    public TextView mInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamefive);
-        //declare XML elements
-        mRandomN = findViewById(R.id.randomN);
-        mSequence = findViewById(R.id.sequence);
-        mButton = findViewById(R.id.button);
-        mEnter = findViewById(R.id.G4Enter);
-        message = findViewById(R.id.G4Message);
-        info = findViewById(R.id.G4Counter);
+        mRandomN = findViewById(R.id.G5tv_Sequence);
+        mSequence = findViewById(R.id.G5et_Answer);
+        mButton = findViewById(R.id.G5bt_Get);
+        mEnter = findViewById(R.id.G5bt_Enter);
+        mMessage = findViewById(R.id.G5tv_Message);
+        mInfo = findViewById(R.id.G5tv_Counter);
         random = generateNumber();
+        //creates one array that has been filled with random numbers
         String solution = String.valueOf(random.get(0)) + String.valueOf(random.get(1)) + String.valueOf(random.get(2)) + String.valueOf(random.get(3)) + String.valueOf(random.get(4)) + String.valueOf(random.get(5)) + String.valueOf(random.get(6)) + String.valueOf(random.get(7)) + String.valueOf(random.get(8)) + String.valueOf(random.get(9)) + String.valueOf(random.get(10));
+        //casts array into string by calling upon each of the objects individually and putting them together
         mRandomN.setText((String.valueOf(random.get(0))));
-        info.setText("This is number 1 in the sequence");
+        //casts first number into string and prints first number within the array
+        mInfo.setText("This is number 1 in the sequence");
         mHandler = new Handler();
-        //Set OnClickListener to refresh number
+        //Handler enables message and runnable to be processed at a delay of 2 seconds, printing out arraylist of numbers
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startRepeatingTask();
             }
         });
+        //startRepeatingTask() method, begins iterating through arraylist
         mEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String userinput = mSequence.getText().toString();
+                //casts the userinput into string so it can be compared against the solution
                 if(userinput.equals(solution)){
-                    message.setText("Correct!");
+                    mMessage.setText("Correct!");
+                    //tells user they are correct
                 }
                 else{
-                    message.setText("Incorrect! The sequence was " + solution);
+                    mMessage.setText("Incorrect! The sequence was " + solution);
+                    //tells them they are incorrect and tells them what the answer was
                 }
             }
         });
@@ -68,16 +73,15 @@ public class GameFiveFragment extends AppCompatActivity {
 
     Runnable mStatusChecker = new Runnable() {
         int times = 0;
-
+        //Prints out a single number for duration of 2 seconds, repeats 10 ten times
         @Override
         public void run() {
             if (times < 10) {
                 try {
-                    updateStatus(); //this function can change value of mInterval.
+                    updateStatus();
                     times++;
                 } finally {
-                    // 100% guarantee that this always happens, even if
-                    // your update method throws an exception
+
                     mHandler.postDelayed(mStatusChecker, mInterval);
                 }
             } else {
@@ -90,7 +94,8 @@ public class GameFiveFragment extends AppCompatActivity {
         if (counter <= random.size()) {
             counter++;
             mRandomN.setText(String.valueOf(random.get(counter)));
-            info.setText("This is number " + (counter+1) + " in the sequence");
+            mInfo.setText("This is number " + (counter+1) + " in the sequence");
+            //lets user know which number is appearing in the sequence. useful when same number repeats twice in a row
         }
         else {
             counter = 0;
@@ -107,8 +112,10 @@ public class GameFiveFragment extends AppCompatActivity {
 
     public static ArrayList<Integer> generateNumber(){
         ArrayList<Integer> generateNumber = new ArrayList<>();
+        //array to hold the sequence of numbers
         for (int i = 0; i<11; i++){
             generateNumber.add(new Integer((int)(Math.random() * ((9 - 0) + 1)) + 0));
+            //generates ten different numbers that are between 0-9 to fill the array
         }
         return generateNumber;
 

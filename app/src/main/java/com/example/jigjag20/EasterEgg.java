@@ -19,18 +19,20 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class EasterEgg extends AppCompatActivity {
-    private TextView display;
-    private Button refresh;
+    private TextView mSetup;
+    private TextView mDisplay;
+    private Button mRefresh;
     private Joke joke;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.extra);
-        display = findViewById(R.id.textView8);
-        refresh = findViewById(R.id.refresh);
+        mSetup = findViewById(R.id.Etv_Setup);
+        mDisplay = findViewById(R.id.Etv_Output);
+        mRefresh = findViewById(R.id.Ebt_refresh);
         new GetJokeTask().execute();
-        refresh.setOnClickListener(new View.OnClickListener() {
+        mRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new GetJokeTask().execute();
@@ -64,11 +66,12 @@ public class EasterEgg extends AppCompatActivity {
             //Post-execute method handles rendering after API is called
             if (joke != null) {
                 //If API function worked this is executed
-                display.setText(joke.getDelivery()); //Quote sentence
+                mSetup.setText(joke.getSetup()); //quote joke setup
+                mDisplay.setText(joke.getDelivery()); //quote joke punchline
                 Log.v("result of joke", "result is" + joke);
             } else {
                 //If API function failed to retrieve quote, this is executed
-                display.setText("An error occurred! Please refresh!"); //Prompts user how to recover
+                mDisplay.setText("An error occurred! Please refresh!"); //prompts user to try again
 
             }
         }

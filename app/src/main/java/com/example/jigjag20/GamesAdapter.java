@@ -2,7 +2,6 @@ package com.example.jigjag20;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,10 +35,10 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
             super(v);
             mListener = listener;
             v.setOnClickListener(this);
-            name = v.findViewById(R.id.ListName);
-            type = v.findViewById(R.id.ListType);
-            description = v.findViewById(R.id.ListDescription);
-            image = v.findViewById(R.id.ListPhoto);
+            name = v.findViewById(R.id.GLtv_Name);
+            type = v.findViewById(R.id.GLtv_Type);
+            description = v.findViewById(R.id.GLtv_Description);
+            image = v.findViewById(R.id.GLiv_Photo);
         }
 
         @Override
@@ -58,11 +57,8 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
         holder.name.setText(games.getName());
         holder.type.setText(games.getType());
         holder.description.setText(games.getDescription());
-
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inScaled = false;
-        Bitmap source = BitmapFactory.decodeResource(holder.image.getResources(), games.getImage(), options);
-        holder.image.setImageBitmap(source);
+        holder.image.setImageResource(games.getImage());
+//fills list with information found in array
     }
     @Override
     public int getItemCount() {

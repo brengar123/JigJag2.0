@@ -25,12 +25,15 @@ public class DictionaryRequest extends AsyncTask<String,Integer, String> {
     public DictionaryRequest(Context context, TextView tV) {
         this.context = context;
         mDefinition = tV;
+        //sets context to let know which java file (and in turn which XML view) mDefinition is referencing
     }
     @Override
     protected String doInBackground(String... params) {
+        //doInBackground code given by Oxford Dictionaries exemplar API, reference:"https://developer.oxforddictionaries.com/documentation#!/Entries/get_entries_source_lang_word_id"
 
         final String app_id = "b463faf0";
         final String app_key = "08ad010cc1770d1c1acc2e7e48f38caf";
+        //app_id and app_key given by oxford dictionary account
         try {
             URL url = new URL(params[0]);
             HttpsURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
@@ -70,14 +73,17 @@ public class DictionaryRequest extends AsyncTask<String,Integer, String> {
             JSONArray sensesArr = entriesArr.getJSONObject(0).getJSONArray("senses");
             JSONArray definitionsArr = sensesArr.getJSONObject(0).getJSONArray("definitions");
 
-            String def = definitionsArr.toString();
-            mDefinition.setText(def);
+            //code above translates result into JSON different objects, for the purpose of the game only definition is necessary but the result needs to be broken sequentially
 
+            String def = definitionsArr.toString();
+            //casts the definition JSON object into a string
+            mDefinition.setText(def);
+            //prints string into textview in layout
         } catch (JSONException e) {
             e.printStackTrace();
         }
         Log.v("Result of Dictionary", "onPostExecute" + result);
-
+        //used to error check and see if JSON was retrieved from internet
 
     }
 }

@@ -1,6 +1,5 @@
 package com.example.jigjag20;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,48 +9,56 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameThreeFragment extends AppCompatActivity {
-    private TextView message;
-    private Button increase;
-    private Button stopper;
-    private ImageView balloon;
+    private TextView mMessage;
+    private Button mIncrease;
+    private Button mStopper;
+    private ImageView mBalloon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamethree);
-        balloon = findViewById(R.id.balloon);
-        message = findViewById(R.id.G3Message);
-        message.setText("");
-        increase = findViewById(R.id.increase);
-        stopper = findViewById(R.id.stopper);
+        mBalloon = findViewById(R.id.G3iv_Balloon);
+        mMessage = findViewById(R.id.G3tv_Message);
+        mMessage.setText("");
+        mIncrease = findViewById(R.id.G3bt_Increase);
+        mStopper = findViewById(R.id.G3bt_Stop);
         int limit = RandomiseNumber(5,10);
+        //generates random number for when balloon will pop
         final int[] holder = {0};
-        balloon.setImageResource(R.drawable.emptybal);
+        //stores how many times balloon size has increased
+        mBalloon.setImageResource(R.drawable.emptybal);
 
-        increase.setOnClickListener(new View.OnClickListener() {
+        mIncrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int i = holder[0]++ + 1;
 
                 if (i >= limit){
-                    message.setText("Oh no! You have popped the balloon!");
-                    balloon.setImageResource(R.drawable.popbal);
+                    mMessage.setText("Oh no! You have popped the balloon!");
+                    mBalloon.setImageResource(R.drawable.popbal);
+                    //lets user know they have popped balloon and displays popped balloon picture
                 }
                 else if (i == 1){
-                    message.setText("You have blown up the balloon 1 time");
-                    balloon.setImageResource(R.drawable.onebal);
+                    mMessage.setText("You have blown up the balloon 1 time");
+                    mBalloon.setImageResource(R.drawable.onebal);
+                    //lets user know they have blown the balloon up once
                 }
                 else {
-                    message.setText("You have blown up the balloon " + i + " times");
+                    mMessage.setText("You have blown up the balloon " + i + " times");
+                    //lets the user know how many times they have blown the balloon
+                    //balloon image increases everytime to let user know it is about to pop
                 }
             }
         });
 
-        stopper.setOnClickListener(new View.OnClickListener() {
+        mStopper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                message.setText("You stopped blowing the balloon");
+                mMessage.setText("You stopped blowing the balloon");
             }
+            //lets the user stop blowing the balloon
+            //ideal future implementation: this result is stored in database and ccomparison with other players is displayed to user to guage level of risk
         });
 
 
@@ -60,5 +67,6 @@ public class GameThreeFragment extends AppCompatActivity {
     public static int RandomiseNumber(int min, int max) {
         int number = (int) (Math.random() * ((max - min) + 1)) + min;
         return number;
+        //method to generate random number of when balloon pops
     }
 }

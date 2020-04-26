@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Anagram {
     public static final Random rand = new Random();
+    //instatiates the imported random util
     public static final String[] words = {"banana",
             "tray",
             "colon",
@@ -105,12 +106,16 @@ public class Anagram {
             "army"
 
     };
+    //array stores random words
+    //note: random words generated from: https://randomwordgenerator.com/ and pasted into array
 
 
     public static String randomWord(){
         return words[rand.nextInt(words.length)];
     }
+    //method to select a random word from within the array
     public static String shuffleWord(String word){
+        //method to scramble the random word into jumbled letters
         if (word != null && !"".equals(word)){
             char a[] = word.toCharArray();
             for (int i=0; i < a.length; i++){
@@ -122,5 +127,6 @@ public class Anagram {
             return new String(a);
         }
         return word;
+        //scramble method and logic based on youtube tutorial, reference: "https://www.youtube.com/watch?v=GQR_5ZEj0dU"
     }
 }

@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/b_start"
+        android:id="@+id/G4bt_Start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -17,11 +17,11 @@
         android:text="START" />
 
     <Button
-        android:id="@+id/b_main"
+        android:id="@+id/G4bt_Main"
         android:layout_width="match_parent"
         android:layout_height="508dp"
-        android:layout_above="@+id/b_start"
-        android:layout_below="@+id/tv_info"
+        android:layout_above="@+id/G4bt_Start"
+        android:layout_below="@+id/G4tv_Record"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="48dp"
@@ -32,10 +32,10 @@
 
 
     <TextView
-        android:id="@+id/tv_info"
+        android:id="@+id/G4tv_Record"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView10"
+        android:layout_below="@+id/G4tv_Title"
         android:layout_alignParentTop="true"
         android:layout_marginTop="67dp"
         android:gravity="center"
@@ -43,7 +43,7 @@
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/G4tv_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

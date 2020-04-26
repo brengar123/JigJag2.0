@@ -10,69 +10,67 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class GameFourFragment extends AppCompatActivity {
-
-    Button b_start, b_main;
-
-    TextView tv_info;
-
-    long startTime, endTime, currentTime, bestTime = 10000;
-
+    //Initialize variables
+    private Button mStart;
+    private Button mMain;
+    private TextView mInfo;
+    private long startTime;
+    private long endTime;
+    private long currentTime;
+    private long bestTime = 10000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamefour);
+        //Linking XML files
+        mStart = findViewById(R.id.G4bt_Start);
+        mMain = findViewById(R.id.G4bt_Main);
 
-        b_start = (Button) findViewById(R.id.b_start);
-        b_main = (Button) findViewById(R.id.b_main);
+        mInfo = findViewById(R.id.G4tv_Record);
 
-        tv_info = (TextView) findViewById(R.id.tv_info);
+        mStart.setEnabled(true);
+        mMain.setEnabled(false);
 
-        b_start.setEnabled(true);
-        b_main.setEnabled(false);
+        mInfo.setText("BEST TIME: " + bestTime + " ms");
 
-        tv_info.setText("BEST TIME: " + bestTime + " ms");
-
-        b_start.setOnClickListener(new View.OnClickListener() {
+        mStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b_start.setEnabled(false);
-                b_main.setText("");
-
+                mStart.setEnabled(false);
+                mMain.setText("");
+                //Use Handler to schedule delayed runnable in 2 seconds (upon being pressed)
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
+                    //Upon pressing, captures current time of system and changes background colour
                     @Override
                     public void run() {
                         startTime = System.currentTimeMillis();
-                        b_main.setBackgroundColor(
+                        mMain.setBackgroundColor(
                                 ContextCompat.getColor(getApplicationContext(), R.color.blue));
-                        b_main.setText("PRESS");
-                        b_main.setEnabled(true);
+                        mMain.setText("PRESS");
+                        mMain.setEnabled(true);
 
                     }
                 }, 2000);
             }
 
         });
-
-        b_main.setOnClickListener(new View.OnClickListener() {
+        //Default view of the game, updates to show the fastest time of user
+        mMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 endTime = System.currentTimeMillis();
-                b_main.setBackgroundColor(
+                mMain.setBackgroundColor(
                         ContextCompat.getColor(getApplicationContext(), R.color.red));
                 currentTime = endTime - startTime;
-                b_main.setText(currentTime + " ms");
-                b_start.setEnabled(true);
-                b_main.setEnabled(false);
+                mMain.setText(currentTime + " ms");
+                mStart.setEnabled(true);
+                mMain.setEnabled(false);
 
                 if(currentTime < bestTime) {
                     bestTime = currentTime;
-                    tv_info.setText("BEST TIME: " + bestTime + " ms");
+                    mInfo.setText("BEST TIME: " + bestTime + " ms");
                 }
-
-
-
-
             }
         });
     }

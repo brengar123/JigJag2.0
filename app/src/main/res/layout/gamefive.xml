@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/mTest"
+        android:id="@+id/G5tv_Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -20,17 +20,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/randomN"
+        android:id="@+id/G5tv_Sequence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textSize="56sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mTest" />
+        app:layout_constraintTop_toBottomOf="@+id/G5tv_Title" />
 
     <TextView
-        android:id="@+id/mQuestion"
+        android:id="@+id/G5tv_Question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
@@ -38,10 +38,10 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mTest" />
+        app:layout_constraintTop_toBottomOf="@+id/G5tv_Title" />
 
     <EditText
-        android:id="@+id/sequence"
+        android:id="@+id/G5et_Answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -49,47 +49,45 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mQuestion" />
+        app:layout_constraintTop_toBottomOf="@+id/G5tv_Question" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/G5bt_Get"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Get Sequence"
-        app:layout_constraintBottom_toTopOf="@+id/mQuestion"
+        app:layout_constraintBottom_toTopOf="@+id/G5tv_Question"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/randomN" />
+        app:layout_constraintTop_toBottomOf="@+id/G5tv_Sequence" />
 
     <Button
-        android:id="@+id/G4Enter"
+        android:id="@+id/G5bt_Enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Enter"
-        app:layout_constraintEnd_toEndOf="@+id/sequence"
-        app:layout_constraintStart_toStartOf="@+id/sequence"
-        app:layout_constraintTop_toBottomOf="@+id/sequence" />
+        app:layout_constraintEnd_toEndOf="@+id/G5et_Answer"
+        app:layout_constraintStart_toStartOf="@+id/G5et_Answer"
+        app:layout_constraintTop_toBottomOf="@+id/G5et_Answer" />
 
     <TextView
-        android:id="@+id/G4Message"
+        android:id="@+id/G5tv_Message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/G4Enter"
-        app:layout_constraintStart_toStartOf="@+id/G4Enter"
-        app:layout_constraintTop_toBottomOf="@+id/G4Enter"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintEnd_toEndOf="@+id/G5bt_Enter"
+        app:layout_constraintStart_toStartOf="@+id/G5bt_Enter"
+        app:layout_constraintTop_toBottomOf="@+id/G5bt_Enter" />
 
     <TextView
-        android:id="@+id/G4Counter"
+        android:id="@+id/G5tv_Counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/randomN"
-        app:layout_constraintStart_toStartOf="@+id/randomN" />
+        app:layout_constraintBottom_toTopOf="@+id/G5bt_Get"
+        app:layout_constraintEnd_toEndOf="@+id/G5tv_Sequence"
+        app:layout_constraintStart_toStartOf="@+id/G5tv_Sequence" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
