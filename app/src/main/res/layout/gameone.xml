@@ -8,19 +8,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ScrollView
-        android:layout_height="862dp"
+        android:id="@+id/scrollView2"
         android:layout_width="543dp"
-        app:layout_constraintVertical_bias="0.503"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="862dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/scrollView2">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.503">
 
         <LinearLayout
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:orientation="vertical"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
 
     </ScrollView>
 
@@ -243,12 +243,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/G1bt_Enter"
-        app:layout_constraintEnd_toEndOf="@+id/G1bt_Enter"
         android:id="@+id/G1tv_Message"
-        app:layout_constraintTop_toBottomOf="@+id/G1bt_Enter"
-        android:layout_marginTop="8dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="82dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/G1bt_Enter"
+        app:layout_constraintStart_toStartOf="@+id/G1bt_Enter"
+        app:layout_constraintTop_toBottomOf="@+id/G1bt_Enter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

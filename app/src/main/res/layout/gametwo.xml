@@ -94,13 +94,15 @@
         android:ems="10"/>
 
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/G2et_Input"
-        app:layout_constraintEnd_toEndOf="@+id/G2et_Input"
-        android:layout_marginTop="16dp"
         android:id="@+id/G2tv_Message"
-        app:layout_constraintTop_toBottomOf="@+id/G2bt_Enter"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="230dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/G2et_Input"
+        app:layout_constraintStart_toStartOf="@+id/G2et_Input"
+        app:layout_constraintTop_toBottomOf="@+id/G2bt_Enter" />
 
     <Button
         android:layout_height="wrap_content"
